@@ -19,15 +19,10 @@ const getChainId = async (provider: IProvider): Promise<any> => {
 const getAccounts = async (provider: IProvider): Promise<any> => {
   try {
     const ethersProvider = new ethers.BrowserProvider(window.ethereum);
-    console.log({ethersProvider});
     
     const signer = await ethersProvider.getSigner();
-    console.log({signer});
     
-    // Get user's Ethereum public address
     const address = signer.getAddress();
-    console.log({address});
-    
 
     return await address;
   } catch (error) {
@@ -40,14 +35,10 @@ const getBalance = async (provider: IProvider): Promise<string> => {
     const ethersProvider = new ethers.BrowserProvider(window.ethereum);
     const signer = await ethersProvider.getSigner();
 
-    // Get user's Ethereum public address
-    const address = signer.getAddress();
-    console.log({address});
-    
+    const address = signer.getAddress();    
 
-    // Get user's balance in ether
     const balance = ethers.formatEther(
-      await ethersProvider.getBalance(address) // Balance is in wei
+      await ethersProvider.getBalance(address)
     );
 
     return balance;

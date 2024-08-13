@@ -17,7 +17,6 @@ function Dashboard({ provider, setProvider, setLoggedIn }: IProps) {
       uiConsole("provider not initialized yet");
       return;
     }
-    console.log({ provider });
 
     const address = await RPC.getAccounts(provider);
     uiConsole(address);

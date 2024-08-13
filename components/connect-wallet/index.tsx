@@ -34,7 +34,6 @@ function ConnectWallet() {
   const login = async () => {
     try {
       const web3authProvider = await web3auth.connect();
-      console.log({ web3authProvider, con: web3auth.connected });
 
       if (web3auth.connected) {
         setLoggedIn(true);

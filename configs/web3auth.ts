@@ -27,7 +27,6 @@ const web3AuthOptions: Web3AuthOptions = {
 };
 
 const web3auth = new Web3Auth(web3AuthOptions);
-console.log({ adapters });
 
 adapters.forEach((adapter) => {
   web3auth.configureAdapter(adapter);
